@@ -37,7 +37,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="createSLI" value="Cria novo SLT com 30 dias uteis de inicio" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="-680" y="790" width="200" height="60" as="geometry" />
+          <mxGeometry x="-580" y="790" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="sliFound" target="createSLI" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -54,7 +54,7 @@
           <mxGeometry x="-190" y="780" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="updateSLI" value="Atualiza data de confirmação do SLT&lt;div&gt;com a data corrente&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="-210" y="960" width="200" height="60" as="geometry" />
+          <mxGeometry x="-210" y="900" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="sliFound" target="updateSLI" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -92,7 +92,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="p-sIgQ1qaCB0FaJdWFcv-9" value="Obtém SLT" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
-          <mxGeometry x="-170" y="590" width="120" height="60" as="geometry" />
+          <mxGeometry x="-170" y="620" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="p-sIgQ1qaCB0FaJdWFcv-15" value="" style="line;strokeWidth=2;direction=south;html=1;" vertex="1" parent="1">
           <mxGeometry x="-710" y="20.630000000000003" width="10" height="378.75" as="geometry" />
@@ -161,8 +161,59 @@
         <mxCell id="p-sIgQ1qaCB0FaJdWFcv-25" value="Pagamento é cobrado mensalmente?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-210" y="399.38" width="200" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-30" value="" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
-          <mxGeometry x="110" y="250" width="120" height="60" as="geometry" />
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-30" target="p-sIgQ1qaCB0FaJdWFcv-34">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="215" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-30" value="Obtém a Pagadoria pelo tipo do Pagamento" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="250" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-34" target="p-sIgQ1qaCB0FaJdWFcv-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-34" value="Obtém o Pagamento da Pagadoria" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="122.5" y="399.38" width="185" height="70.62" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-35">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-660" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-38" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="p-sIgQ1qaCB0FaJdWFcv-37">
+          <mxGeometry x="-0.8893" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-35" target="p-sIgQ1qaCB0FaJdWFcv-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-35" value="encontrado?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="152.5" y="545" width="125" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-39">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-660" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-43" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="p-sIgQ1qaCB0FaJdWFcv-42">
+          <mxGeometry x="-0.8473" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-39" target="p-sIgQ1qaCB0FaJdWFcv-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-39" value="Valor liberado e igual à zero?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="87.5" y="690" width="255" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-44">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-660" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-44" value="Tipo de Pagamento é Cartão de Crédito e valor e taxa de adiantamento é nulo ?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="52.5" y="930" width="325" height="130" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
