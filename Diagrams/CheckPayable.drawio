@@ -1,96 +1,168 @@
-<mxfile host="app.diagrams.net" version="26.2.14">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.14">
   <diagram id="GeneratedFlow" name="Fluxo de Pagamento">
-    <mxGraphModel dx="1426" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2185" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        
-        <!-- Início -->
         <mxCell id="start" value="Início" style="ellipse;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="160" y="40" width="80" height="40" as="geometry" />
+          <mxGeometry x="-800" y="20" width="80" height="40" as="geometry" />
         </mxCell>
-        
-        <!-- Obtém o Pagamento -->
-        <mxCell id="getPayment" value="Obtém o Pagamento" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="160" y="120" width="160" height="60" as="geometry" />
+        <mxCell id="getPayment" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="-650" y="10" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="start" target="getPayment" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
-        <!-- Pagamento não encontrado -->
-        <mxCell id="paymentNotFound" value="Pagamento não encontrado e tentativas &lt; 3?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="160" y="220" width="160" height="80" as="geometry" />
+        <mxCell id="paymentNotFound" value="encontrado?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="-370" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="getPayment" target="paymentNotFound" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
-        <!-- Nova tentativa -->
-        <mxCell id="scheduleRetry" value="Agenda nova tentativa em 30 minutos e retorna" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="40" y="340" width="200" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="paymentNotFound" target="scheduleRetry" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        
-        <!-- Verificação da SLI -->
-        <mxCell id="checkSLI" value="Verificação da SLI" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="360" y="340" width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="paymentNotFound" target="checkSLI" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        
-        <!-- SLI não encontrado -->
-        <mxCell id="sliNotFound" value="SLI não encontrado?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="360" y="440" width="160" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="checkSLI" target="sliNotFound" edge="1">
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="scheduleRetry" target="p-sIgQ1qaCB0FaJdWFcv-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
-        <!-- Cria novo SLI -->
-        <mxCell id="createSLI" value="Cria novo SLI com 30 dias de vencimento" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="160" y="560" width="200" height="60" as="geometry" />
+        <mxCell id="scheduleRetry" value="Agenda nova tentativa com 30 minutos" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="-600" y="180" width="160" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="sliNotFound" target="createSLI" edge="1">
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-4" target="scheduleRetry" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        
-        <!-- SLI encontrado -->
-        <mxCell id="sliFound" value="SLI encontrado?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="560" y="440" width="160" height="80" as="geometry" />
+        <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-12" target="p-sIgQ1qaCB0FaJdWFcv-17" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-120" y="210" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="edge7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="checkSLI" target="sliFound" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="createSLI" value="Cria novo SLT com 30 dias uteis de inicio" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="-680" y="790" width="200" height="60" as="geometry" />
         </mxCell>
-        
-        <!-- Atualiza SLI -->
-        <mxCell id="updateSLI" value="Atualiza data de confirmação do SLI" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="560" y="560" width="200" height="60" as="geometry" />
+        <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="sliFound" target="createSLI" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-200" y="670" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-29" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge6">
+          <mxGeometry x="-0.1234" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sliFound" value="encontrado?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="-190" y="780" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="updateSLI" value="Atualiza data de confirmação do SLT&lt;div&gt;com a data corrente&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="-210" y="960" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="sliFound" target="updateSLI" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        
-        <!-- Continua o fluxo -->
-        <mxCell id="continue" value="Continua o fluxo..." style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="360" y="680" width="160" height="60" as="geometry" />
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="paymentNotFound" target="p-sIgQ1qaCB0FaJdWFcv-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-450" y="170" as="sourcePoint" />
+            <mxPoint x="-600" y="340" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="edge9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="createSLI" target="continue" edge="1">
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-6" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="p-sIgQ1qaCB0FaJdWFcv-5">
+          <mxGeometry x="-0.3077" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-4" value="tentativas &amp;lt; 3?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-350" y="170" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-7" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry y="-9" relative="1" as="geometry">
+            <mxPoint x="-724" y="221.32999999999998" as="sourcePoint" />
+            <mxPoint x="-804" y="221.32999999999998" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-8" value="Obtém o Pagamento" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="-650" y="10" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-9" target="sliFound">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-120" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-9" value="Obtém SLT" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="-170" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-15" value="" style="line;strokeWidth=2;direction=south;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-710" y="20.630000000000003" width="10" height="378.75" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-160" y="280" as="sourcePoint" />
+            <mxPoint x="-700" y="210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-160" y="281" />
+              <mxPoint x="-660" y="281" />
+              <mxPoint x="-660" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-22" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="p-sIgQ1qaCB0FaJdWFcv-19">
+          <mxGeometry x="-0.5454" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-25" target="p-sIgQ1qaCB0FaJdWFcv-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edge10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="updateSLI" target="continue" edge="1">
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-28" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="p-sIgQ1qaCB0FaJdWFcv-20">
+          <mxGeometry x="-0.0341" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-17" target="p-sIgQ1qaCB0FaJdWFcv-30">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-32" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="p-sIgQ1qaCB0FaJdWFcv-31">
+          <mxGeometry x="-0.1849" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-17" value="encontrada?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-160" y="240" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="paymentNotFound" target="p-sIgQ1qaCB0FaJdWFcv-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-210" y="40" as="sourcePoint" />
+            <mxPoint x="-110" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-24" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="p-sIgQ1qaCB0FaJdWFcv-23">
+          <mxGeometry x="-0.496" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-12" value="Obtém Conta do Pagamento" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="-190" y="90" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-17" target="p-sIgQ1qaCB0FaJdWFcv-25">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-110" y="320" as="sourcePoint" />
+            <mxPoint x="-110" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-27" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="p-sIgQ1qaCB0FaJdWFcv-26">
+          <mxGeometry x="-0.0533" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-25" value="Pagamento é cobrado mensalmente?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-210" y="399.38" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-30" value="" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="250" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
