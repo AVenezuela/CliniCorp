@@ -209,7 +209,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-39" value="Valor liberado e igual à zero?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-39" value="Valor pago e igual à zero?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="87.5" y="690" width="255" height="110" as="geometry" />
         </mxCell>
         <mxCell id="p-sIgQ1qaCB0FaJdWFcv-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="p-sIgQ1qaCB0FaJdWFcv-44" edge="1">
@@ -338,9 +338,6 @@
         <mxCell id="p-sIgQ1qaCB0FaJdWFcv-82" value="É&amp;nbsp;&lt;div&gt;Boleto,&amp;nbsp;&lt;/div&gt;&lt;div&gt;Cartão de Crédito,&amp;nbsp;&lt;/div&gt;&lt;div&gt;ou IUGU Pix ?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1460" y="641.25" width="170" height="142.5" as="geometry" />
         </mxCell>
-        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-85" value="Não faz nada" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
-          <mxGeometry x="1770" y="625" width="120" height="80" as="geometry" />
-        </mxCell>
         <mxCell id="UCpEY9gyova4qjN9Gvjt-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="UCpEY9gyova4qjN9Gvjt-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1390" y="710" as="sourcePoint" />
@@ -369,9 +366,6 @@
         </mxCell>
         <mxCell id="p-sIgQ1qaCB0FaJdWFcv-90" value="Obtem&lt;br&gt;Cobranças" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="1710" y="867.5" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="p-sIgQ1qaCB0FaJdWFcv-93" value="Não faz nada" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
-          <mxGeometry x="1770" y="910" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="p-sIgQ1qaCB0FaJdWFcv-95" value="Gera e executa as transações" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="1990" y="780" width="120" height="60" as="geometry" />
